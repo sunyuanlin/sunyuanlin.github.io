@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head>
+    <meta charset=utf-8"UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BELONG&#39;s Blog</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="belongapp,"> 
+    <meta name="description" content="专注于后端开发,"> 
+    <meta name="author" content="BELONG"> 
+    <link rel="alternative" href="atom.xml" title="BELONG&#39;s Blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="../../../../../cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" tppabs="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="../../../../css/diaspora.css" tppabs="https://www.belongapp.fun/css/diaspora.css">
+
+</head>
+
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">SpringBoot系列 - 集成Thymeleaf构建Web应用</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">SpringBoot系列 - 集成Thymeleaf构建Web应用</h1>
+        <div class="stuff">
+            <span>三月 08, 2018</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <p>Thymeleaf 是一个跟 Velocity、FreeMarker 类似的模板引擎，它可以完全替代 JSP 。相较与其他的模板引擎，它有如下三个极吸引人的特点：</p>
+<p>Thymeleaf 在有网络和无网络的环境下皆可运行，即它可以让美工在浏览器查看页面的静态效果，也可以让程序员在服务器查看带数据的动态页面效果。<br>Thymeleaf 开箱即用的特性。它提供标准和spring标准两种方言，可以直接套用模板实现JSTL、 OGNL表达式效果，避免每天套模板、该jstl、改标签的困扰。<br>Thymeleaf 提供spring标准方言和一个与 SpringMVC 完美集成的可选模块，可以快速的实现表单绑定、属性编辑器、国际化等功能。<br>目前最新版本是Thymeleaf 3，官网地址：<a href="javascript:if(confirm('http://www.thymeleaf.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.thymeleaf.org/'" tppabs="http://www.thymeleaf.org/" target="_blank" rel="external">http://www.thymeleaf.org</a></p>
+<p>本篇将介绍如何在SpringBoot中集成Thymeleaf构建Web应用。<br><a id="more"></a><br>maven依赖</p>
+<properties><br>    <project.build.sourceencoding>UTF-8</project.build.sourceencoding><br>    <project.reporting.outputencoding>UTF-8</project.reporting.outputencoding><br>    <java.version>1.8</java.version><br>    <thymeleaf.version>3.0.7.RELEASE</thymeleaf.version><br>    <thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version><br></properties>
+
+<dependencies>
+
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+    &lt;exclusions&gt;
+        &lt;exclusion&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;
+        &lt;/exclusion&gt;
+    &lt;/exclusions&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-jetty&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre><p></p></dependencies><br>资源目录<p></p>
+<p>Spring Boot默认提供静态资源目录位置需置于classpath下，目录名需符合如下规则：</p>
+<p>/static<br>/public<br>/resources<br>/META-INF/resources<br>举例：我们可以在src/main/resources/目录下创建static，在该位置放置一个图片文件pic.jpg。 启动程序后，尝试访问<a href="javascript:if(confirm('http://localhost:8080/pic.jpg。如能显示图片，配置成功。  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://localhost:8080/pic.jpg。如能显示图片，配置成功。'" tppabs="http://localhost:8080/pic.jpg。如能显示图片，配置成功。" target="_blank" rel="external">http://localhost:8080/pic.jpg。如能显示图片，配置成功。</a></p>
+<p>SpringBoot的默认模板路径为：src/main/resources/templates</p>
+<p>添加页面</p>
+<p>这里我在src/main/resources/templates下面添加一个index.html首页，同时引用到一些css、js文件，看看Thymeleaf 3的语法：</p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"></html></p>
+<p><head><br>    <meta charset="utf-8"><br>    <meta name="viewport" content="width=device-width, initial-scale=1.0"><br>    <meta name="renderer" content="webkit"><br>    <title>首页</title><br>    <link rel="shortcut icon" th:href="@{/favicon.ico}"><br>    <link th:href="@{/static/css/bootstrap.min.css}.css" tppabs="https://www.belongapp.fun/2018/03/08/SpringBoot系列-集成Thymeleaf构建Web应用/@{/static/css/bootstrap.min.css}" rel="stylesheet"><br>    <link th:href="@{/static/css/font-awesome.min.css}.css" tppabs="https://www.belongapp.fun/2018/03/08/SpringBoot系列-集成Thymeleaf构建Web应用/@{/static/css/font-awesome.min.css}" rel="stylesheet"><br></head></p>
+<p><body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden"></body></p>
+<p><div id="wrapper"><br>    <h1 th:text="${msg}"></h1><br></div></p>
+<script th:src="@{/static/js/jquery.min.js}" tppabs="https://www.belongapp.fun/2018/03/08/SpringBoot系列-集成Thymeleaf构建Web应用/@{/static/js/jquery.min.js}"></script>
+<script th:src="@{/static/js/bootstrap.min.js}" tppabs="https://www.belongapp.fun/2018/03/08/SpringBoot系列-集成Thymeleaf构建Web应用/@{/static/js/bootstrap.min.js}"></script>
+
+<p><br><br>页面中几个地方说明一下：</p>
+<p><html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"><br>加上这个命名空间后就能在页面中使用Thymeleaf自己的标签了，以th:开头。</html></p>
+<p>连接语法 th:href=”@{/static/css/bootstrap.min.css}”</p>
+<p>访问Model中的数据语法 th:text=”${msg}”</p>
+<p>这里我在页面里显示的是一个键为msg的消息，需要后台传递过来。</p>
+<p>Thymeleaf 3的详细语法规则请参考 官网教程</p>
+<p>编写Controller</p>
+<p>接下来编写控制器类，将URL / 和 /index 都返回index.html页面：</p>
+<p>@Controller<br>public class IndexController {<br>    private static final Logger _logger = LoggerFactory.getLogger(IndexController.class);<br>    /**</p>
+<pre><code> * 主页
+ *
+ * @param model
+ * @return
+ */
+@RequestMapping({&quot;/&quot;, &quot;/index&quot;})
+public String index(Model model) {
+    model.addAttribute(&quot;msg&quot;, &quot;welcome you!&quot;);
+    return &quot;index&quot;;
+}
+</code></pre><p>}<br>这里，我再model里面添加了一个属性，key=msg，值为welcome you!。</p>
+<p>接下来启动应用后，打开首页看看效果如何。消息正确显示，成功！。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="javascript:if(confirm('http://music.163.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://music.163.com/#/song?id=479598964'" tppabs="http://music.163.com/#/song?id=479598964">
+            </audio>
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='a396afe529734b15300f'
+        data-cs='0ae7c1790f9a5cbc2b7339c12a82d58fe58f9567'
+        data-r='vipcolud.github.io'
+        data-o='vipcolud'
+        data-a='vipcolud'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="../../../../../cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" tppabs="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="../../../../../lib.baomitu.com/jquery/1.8.3/jquery.min.js" tppabs="https://lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="../../../../js/plugin.js" tppabs="https://www.belongapp.fun/js/plugin.js"></script>
+<script src="../../../../js/diaspora.js" tppabs="https://www.belongapp.fun/js/diaspora.js"></script>
+<link rel="stylesheet" href="../../../../photoswipe/photoswipe.css" tppabs="https://www.belongapp.fun/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="../../../../photoswipe/default-skin/default-skin.css" tppabs="https://www.belongapp.fun/photoswipe/default-skin/default-skin.css">
+<script src="../../../../photoswipe/photoswipe.min.js" tppabs="https://www.belongapp.fun/photoswipe/photoswipe.min.js"></script>
+<script src="../../../../photoswipe/photoswipe-ui-default.min.js" tppabs="https://www.belongapp.fun/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69833742-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+</html>

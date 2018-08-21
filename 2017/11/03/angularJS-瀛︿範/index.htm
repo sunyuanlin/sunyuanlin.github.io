@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head>
+    <meta charset=utf-8"UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BELONG&#39;s Blog</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="belongapp,"> 
+    <meta name="description" content="专注于后端开发,"> 
+    <meta name="author" content="BELONG"> 
+    <link rel="alternative" href="atom.xml" title="BELONG&#39;s Blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="../../../../../cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" tppabs="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="../../../../css/diaspora.css" tppabs="https://www.belongapp.fun/css/diaspora.css">
+
+</head>
+
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">angularJS 学习</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">angularJS 学习</h1>
+        <div class="stuff">
+            <span>十一月 03, 2017</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <p>AngularJS[1]  诞生于2009年，由Misko Hevery 等人创建，后为Google所收购。是一款优秀的前端JS框架，已经被用于Google的多款产品当中。AngularJS有着诸多特性，最为核心的是：MVC、模块化、自动化双向数据绑定、语义化标签、依赖注入等等。<br>AngularJS 是一个 JavaScript框架。它是一个以 JavaScript 编写的库。<br>AngularJS 通过 指令 扩展了 HTML，且通过 表达式 绑定数据到 HTML。<br>AngularJS 是以一个 JavaScript 文件形式发布的，可通过 script 标签添加到网页中。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">&lt;script src=&quot;http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;myCtrl&quot; ng-init=&quot;quantity=1;cost=5;person=&#123;first:&apos;John&apos;,last:&apos;Doe&apos;&#125;;names=[&apos;Jani&apos;,&apos;Hege&apos;,&apos;Kai&apos;]&quot;&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">&lt;li ng-repeat=&quot;x in names&quot;&gt;</div><div class="line">&#123;&#123;x&#125;&#125;</div><div class="line">&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;p&gt;姓名:&#123;&#123;person.first&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;总价：&lt;span ng-bind=&quot;quantity*cost&quot;&gt;&lt;/span&gt;&lt;/p&gt;</div><div class="line">姓：&lt;input type=&quot;text&quot; ng-model=&quot;firstName&quot;&gt;&lt;br&gt;</div><div class="line">名：&lt;input type=&quot;text&quot; ng-model=&quot;lastName&quot;&gt;&lt;br&gt;</div><div class="line">&lt;br&gt;</div><div class="line">姓名:&#123;&#123;firstName+&quot;&quot;+lastName&#125;&#125;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module(&apos;myApp&apos;,[]);</div><div class="line">app.controller(&apos;myCtrl&apos;,function($scope)</div><div class="line">&#123;</div><div class="line">    $scope.firstName=&quot;John&quot;;</div><div class="line">    $scope.lastName=&quot;Doe&quot;;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>[html] view plain copy<br>AngularJS Scope(作用域)<br>Scope(作用域) 是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带。<br>Scope 是一个对象，有可用的方法和属性。<br>Scope 可应用在视图和控制器上。<br>如何使用 Scope<br>当你在 AngularJS 创建控制器时，你可以将 $scope 对象当作一个参数传递:<br>AngularJS 实例<br>控制器中的属性对应了视图上的属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;myCtrl&quot;&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;&#123;&#123;carname&#125;&#125;&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module(&apos;myApp&apos;, []);</div><div class="line"></div><div class="line">app.controller(&apos;myCtrl&apos;, function($scope) &#123;</div><div class="line">    $scope.carname = &quot;Volvo&quot;;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>Scope 概述<br>AngularJS 应用组成如下：<br>View(视图), 即 HTML。<br>Model(模型), 当前视图中可用的数据。<br>Controller(控制器), 即 JavaScript 函数，可以添加或修改属性。<br>scope 是模型。<br>scope 是一个 JavaScript 对象，带有属性和方法，这些属性和方法可以在视图和控制器中使用。<br>如果你修改了视图，模型和控制器也会相应更新：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;divng-app=&quot;myApp&quot;ng-controller=&quot;myCtrl&quot;&gt;&lt;inputng-model=&quot;name&quot;&gt;&lt;h1&gt;&#123;&#123;greeting&#125;&#125;&lt;/h1&gt;&lt;buttonng-click=&apos;sayHello()&apos;&gt;点我&lt;/button&gt;&lt;/div&gt;&lt;script&gt;</div><div class="line"></div><div class="line">varapp</div><div class="line"> =angular.module(&apos;myApp&apos;,[]);app.controller(&apos;myCtrl&apos;,function($scope)&#123;</div><div class="line"> $scope.name</div><div class="line"> = &quot;Runoob&quot;;</div><div class="line"> $scope.sayHello</div><div class="line"> = function()&#123;</div><div class="line"> $scope.greeting</div><div class="line"> = &apos;Hello&apos;</div><div class="line"> + $scope.name</div><div class="line"> + &apos;!&apos;;&#125;;&#125;);</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>Scope 作用范围<br>了解你当前使用的 scope 是非常重要的。<br>在以上两个实例中，只有一个作用域 scope，所以处理起来比较简单，但在大型项目中， HTML DOM 中有多个作用域，这时你就需要知道你使用的 scope 对应的作用域是哪一个。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;myCtrl&quot;&gt;</div><div class="line"></div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li ng-repeat=&quot;x in names&quot;&gt;&#123;&#123;x&#125;&#125;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module(&apos;myApp&apos;, []);</div><div class="line"></div><div class="line">app.controller(&apos;myCtrl&apos;, function($scope) &#123;</div><div class="line">    $scope.names = [&quot;Emil&quot;, &quot;Tobias&quot;, &quot;Linus&quot;];</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>根作用域<br>所有的应用都有一个 $rootScope，它可以作用在 ng-app 指令包含的所有 HTML 元素中。<br>$rootScope 可作用于整个应用中。是各个 controller 中 scope 的桥梁。用 rootscope 定义的值，可以在各个 controller 中使用。<br>AngularJS 实例<br>创建控制器时，将 $rootScope 作为参数传递，可在应用中使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;myCtrl&quot;&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;&#123;&#123;lastname&#125;&#125; 家族成员:&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li ng-repeat=&quot;x in names&quot;&gt;&#123;&#123;x&#125;&#125; &#123;&#123;lastname&#125;&#125;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module(&apos;myApp&apos;, []);</div><div class="line"></div><div class="line">app.controller(&apos;myCtrl&apos;, function($scope, $rootScope) &#123;</div><div class="line">    $scope.names = [&quot;Emil&quot;, &quot;Tobias&quot;, &quot;Linus&quot;];</div><div class="line">    $rootScope.lastname = &quot;Refsnes&quot;;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">1、uppercase，lowercase 大小写转换</div><div class="line">&#123;&#123; &quot;lower cap string&quot; | uppercase &#125;&#125;   // 结果：LOWER CAP STRING</div><div class="line">&#123;&#123; &quot;TANK is GOOD&quot; | lowercase &#125;&#125;      // 结果：tank is good</div><div class="line">2、date 格式化</div><div class="line">&#123;&#123;1490161945000 | date:&quot;yyyy-MM-dd HH:mm:ss&quot;&#125;&#125; // 2017-03-22 13:52:25</div><div class="line">3、number 格式化（保留小数）</div><div class="line">&#123;&#123;149016.1945000 | number:2&#125;&#125;</div><div class="line">4、currency货币格式化</div><div class="line">&#123;&#123; 250 | currency &#125;&#125;            // 结果：$250.00</div><div class="line">&#123;&#123; 250 | currency:&quot;RMB ￥ &quot; &#125;&#125;  // 结果：RMB ￥ 250.00</div><div class="line">5、filter查找</div><div class="line">输入过滤器可以通过一个管道字符（|）和一个过滤器添加到指令中，该过滤器后跟一个冒号和一个模型名称。</div><div class="line">filter 过滤器从数组中选择一个子集</div><div class="line"> // 查找name为iphone的行</div><div class="line">&#123;&#123; [&#123;&quot;age&quot;: 20,&quot;id&quot;: 10,&quot;name&quot;: &quot;iphone&quot;&#125;,</div><div class="line">&#123;&quot;age&quot;: 12,&quot;id&quot;: 11,&quot;name&quot;: &quot;sunm xing&quot;&#125;,</div><div class="line">&#123;&quot;age&quot;: 44,&quot;id&quot;: 12,&quot;name&quot;: &quot;test abc&quot;&#125;</div><div class="line">] | filter:&#123;&apos;name&apos;:&apos;iphone&apos;&#125; &#125;&#125;</div><div class="line">6、limitTo 截取</div><div class="line">&#123;&#123;&quot;1234567890&quot; | limitTo :6&#125;&#125; // 从前面开始截取6位</div><div class="line">&#123;&#123;&quot;1234567890&quot; | limitTo:-4&#125;&#125; // 从后面开始截取4位</div><div class="line">7、orderBy 排序</div><div class="line"> // 根id降序排</div><div class="line">&#123;&#123; [&#123;&quot;age&quot;: 20,&quot;id&quot;: 10,&quot;name&quot;: &quot;iphone&quot;&#125;,</div><div class="line">&#123;&quot;age&quot;: 12,&quot;id&quot;: 11,&quot;name&quot;: &quot;sunm xing&quot;&#125;,</div><div class="line">&#123;&quot;age&quot;: 44,&quot;id&quot;: 12,&quot;name&quot;: &quot;test abc&quot;&#125;</div><div class="line">] | orderBy:&apos;id&apos;:true &#125;&#125;</div><div class="line"></div><div class="line">// 根据id升序排</div><div class="line">&#123;&#123; [&#123;&quot;age&quot;: 20,&quot;id&quot;: 10,&quot;name&quot;: &quot;iphone&quot;&#125;,</div><div class="line">&#123;&quot;age&quot;: 12,&quot;id&quot;: 11,&quot;name&quot;: &quot;sunm xing&quot;&#125;,</div><div class="line">&#123;&quot;age&quot;: 44,&quot;id&quot;: 12,&quot;name&quot;: &quot;test abc&quot;&#125;</div><div class="line">] | orderBy:&apos;id&apos; &#125;&#125;</div><div class="line">AngularJS XMLHttpRequest</div><div class="line">[html] view plain copy</div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">&lt;script src=&quot;http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div ng-app=&quot;myAPP&quot; ng-controller=&quot;sitectrl&quot;&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li ng-repeat=&quot;x in names&quot;&gt;</div><div class="line">        &#123;&#123;x.Name +&apos;,&apos;+x.Country&#125;&#125;</div><div class="line">    &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script &gt;</div><div class="line">var app=angular.module(&apos;myAPP&apos;,[]);</div><div class="line">app.controller(&apos;sitectrl&apos;,function($scope,$http)&#123;</div><div class="line">    $http(&#123;</div><div class="line">        method:&apos;GET&apos;,</div><div class="line">        url:&apos;http://www.runoob.com/try/angularjs/data/sites.php&apos;&#125;).then(function successCallback(response)&#123;</div><div class="line">            $scope.names=response.data.sites;</div><div class="line">        &#125;,function errorCalback()&#123;</div><div class="line">          //请求失败执行代码</div><div class="line"></div><div class="line">        &#125;);</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>AngularJS Select(选择框)<br>AngularJS 可以使用数组或对象创建一个下拉列表选项。<br>使用 ng-options 创建选择框<br>在 AngularJS 中我们可以使用 ng-option 指令来创建一个下拉列表，列表项通过对象和数组循环输出</p>
+<p>使用对象作为数据源, x 为键(key), y 为值(value):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">[html] view plain copy</div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">&lt;script src=&quot;https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;myCtrl&quot;&gt;</div><div class="line">&lt;p&gt;选择一辆车:&lt;/p&gt;</div><div class="line">&lt;select ng-model=&quot;selectedCar&quot; ng-options=&quot;x for (x,y) in cars&quot;&gt;&lt;/select&gt;</div><div class="line">&lt;p&gt;你选择的是:&#123;&#123;selectedCar.brand&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;型号为:&#123;&#123;selectedCar.model&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;颜色为:&#123;&#123;selectedCar.color&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;下拉列表中的选项也可以是对象的属性。&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module(&apos;myApp&apos;, []);</div><div class="line"></div><div class="line">app.controller(&apos;myCtrl&apos;, function($scope) &#123;</div><div class="line">$scope.cars=&#123;</div><div class="line">     car01:&#123;brand:&quot;Ford&quot;,model:&quot;Mustang&quot;,color:&quot;red&quot;&#125;,</div><div class="line">     car02:&#123;brand:&quot;Fiat&quot;,model:&quot;500&quot;,color:&quot;white&quot;&#125;,</div><div class="line">     scar03:&#123;brand:&quot;Volvo&quot;,model:&quot;XC90&quot;,color:&quot;black&quot;&#125;</div><div class="line">&#125;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="javascript:if(confirm('http://music.163.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://music.163.com/#/song?id=479598964'" tppabs="http://music.163.com/#/song?id=479598964">
+            </audio>
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='a396afe529734b15300f'
+        data-cs='0ae7c1790f9a5cbc2b7339c12a82d58fe58f9567'
+        data-r='vipcolud.github.io'
+        data-o='vipcolud'
+        data-a='vipcolud'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="../../../../../cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" tppabs="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="../../../../../lib.baomitu.com/jquery/1.8.3/jquery.min.js" tppabs="https://lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="../../../../js/plugin.js" tppabs="https://www.belongapp.fun/js/plugin.js"></script>
+<script src="../../../../js/diaspora.js" tppabs="https://www.belongapp.fun/js/diaspora.js"></script>
+<link rel="stylesheet" href="../../../../photoswipe/photoswipe.css" tppabs="https://www.belongapp.fun/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="../../../../photoswipe/default-skin/default-skin.css" tppabs="https://www.belongapp.fun/photoswipe/default-skin/default-skin.css">
+<script src="../../../../photoswipe/photoswipe.min.js" tppabs="https://www.belongapp.fun/photoswipe/photoswipe.min.js"></script>
+<script src="../../../../photoswipe/photoswipe-ui-default.min.js" tppabs="https://www.belongapp.fun/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69833742-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+</html>

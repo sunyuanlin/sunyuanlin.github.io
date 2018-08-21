@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head>
+    <meta charset=utf-8"UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BELONG&#39;s Blog</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="belongapp,"> 
+    <meta name="description" content="专注于后端开发,"> 
+    <meta name="author" content="BELONG"> 
+    <link rel="alternative" href="atom.xml" title="BELONG&#39;s Blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="../../../../../cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" tppabs="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="../../../../css/diaspora.css" tppabs="https://www.belongapp.fun/css/diaspora.css">
+
+</head>
+
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">git</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">git</h1>
+        <div class="stuff">
+            <span>七月 03, 2018</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <p>git是分布式仓库</p>
+<ol>
+<li><p>创建版本库<br>mkdir repo      //创建repo目录<br>cd repo         //进入repo<br>pwd             //显示当前目录<br>git init        //初始化仓库<br>git add .       //添加所有文件进入仓库(命令实际上就是把要提交的所有修改放到暂存区Stage)<br>git status      //提交前查看状态<br>git commit -m “”//提交并加注释(把暂存区的所有修改提交到分支)</p>
+</li>
+<li><p>时光机穿梭<br>git log         //查看历史修改记录<br>git log –pretty=oneline//添加参数可以简洁的查看git修改记录<br>git reset –hard head^ //回到上个版本<br>git reset –hard 3fee3fe4aba //再回到原版本   id号必须在命令号上找到<br><strong>git reflog</strong>       //查看命令历史<br>git checkout – file //直接丢弃工作区的修改<br>git reset HEAD file  git checkout – file//修改错误放到了暂存区</p>
+<a id="more"></a>
+<p><strong>Git是如何跟踪修改的，每次修改，如果不add到暂存区，那就不会加入到commit中。</strong><br>rm //删除文件 git checkout – test.txt//一键还原</p>
+</li>
+</ol>
+<p>github如果已经存在一个非空仓库，本地也存在一个非空仓库，需要提交本地到github需要合并<br>本地仓库和github仓库：git pull –rebase origin master 然后再提交：git push -u origin master</p>
+<ol>
+<li>分支<br>git branch dev      //创建分支<br>git checkout dev    //切换分支<br>git checkout -b dev //创建并切换<br>git branch          //查看分支<br>git merge dev       //合并dev到master<br>git branch -d       //删除分支<br>(1). 当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。</li>
+</ol>
+<p>用git log –graph命令可以看到分支合并图。<br>(2). 修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；<br>当手头工作没有完成时，先把工作现场git stash隐藏一下，然后新建bug分支去修复bug，修复后，再git stash pop，回到工作现场。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="javascript:if(confirm('http://music.163.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://music.163.com/#/song?id=479598964'" tppabs="http://music.163.com/#/song?id=479598964">
+            </audio>
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='a396afe529734b15300f'
+        data-cs='0ae7c1790f9a5cbc2b7339c12a82d58fe58f9567'
+        data-r='vipcolud.github.io'
+        data-o='vipcolud'
+        data-a='vipcolud'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="../../../../../cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" tppabs="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="../../../../../lib.baomitu.com/jquery/1.8.3/jquery.min.js" tppabs="https://lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="../../../../js/plugin.js" tppabs="https://www.belongapp.fun/js/plugin.js"></script>
+<script src="../../../../js/diaspora.js" tppabs="https://www.belongapp.fun/js/diaspora.js"></script>
+<link rel="stylesheet" href="../../../../photoswipe/photoswipe.css" tppabs="https://www.belongapp.fun/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="../../../../photoswipe/default-skin/default-skin.css" tppabs="https://www.belongapp.fun/photoswipe/default-skin/default-skin.css">
+<script src="../../../../photoswipe/photoswipe.min.js" tppabs="https://www.belongapp.fun/photoswipe/photoswipe.min.js"></script>
+<script src="../../../../photoswipe/photoswipe-ui-default.min.js" tppabs="https://www.belongapp.fun/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69833742-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+</html>

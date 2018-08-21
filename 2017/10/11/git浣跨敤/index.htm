@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head>
+    <meta charset=utf-8"UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BELONG&#39;s Blog</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="belongapp,"> 
+    <meta name="description" content="专注于后端开发,"> 
+    <meta name="author" content="BELONG"> 
+    <link rel="alternative" href="atom.xml" title="BELONG&#39;s Blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="../../../../../cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" tppabs="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="../../../../css/diaspora.css" tppabs="https://www.belongapp.fun/css/diaspora.css">
+
+</head>
+
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">git基本操作</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">git基本操作</h1>
+        <div class="stuff">
+            <span>十月 11, 2017</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <p>1.首先新建仓库  然后将其克隆下来<br>git clone  <a href="javascript:if(confirm('https://github.com/vipcolud/vipcolud.git  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/vipcolud/vipcolud.git'" tppabs="https://github.com/vipcolud/vipcolud.git" target="_blank" rel="external">https://github.com/vipcolud/vipcolud.git</a><br>2.然后把项目拷贝到该本地仓库<br>3.将项目加入<br>git add .</p>
+<p>4.提交注释<br>git commit -m “3”</p>
+<p>5.提交<br>git push</p>
+<p>6.状态<br>git status<br>码云上面最好用powershell<br><a id="more"></a></p>
+<ul>
+<li>git init 创建新仓库</li>
+<li>git clone /path/to/repository 创建一个本地仓库的克隆版本</li>
+<li>你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 缓存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，指向你最近一次提交后的结果。</li>
+<li>git add<filename>  git add * 添加到缓存区</filename></li>
+<li>git commit -m “代码提交信息” 提交改动 将代码提交到head中</li>
+<li>git push origin master 将代码提交到远程仓库</li>
+<li>git remote add origin<server> 如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器</server></li>
+<li>分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”。在其他分支上进行开发，完成后再将它们合并到主分支上。</li>
+<li>git checkout -b feature_x 创建一个叫做”feature_x”的分支，并切换过去</li>
+<li>git checkout master 切换回主分支</li>
+<li>git  branch -d feature_x 再把新建的分支删掉</li>
+<li>git push origin <branch> 除非你将分支推送到远端仓库，不然该分支就是不为他人所见的</branch></li>
+<li>git pull 更新本地仓库至最新改动</li>
+<li>git merge <branch> 合并其他分支到你的当前分支</branch></li>
+<li>git add <filename> 自动合并不一定每次都成功，此命令将其合并成功</filename></li>
+<li>git diff<source_branch><target_branch> 查看改动</target_branch></source_branch></li>
+<li>git tag 1.0.0 1b2e1d63ff 创建一个叫做1.0.0的标签</li>
+<li>git log 获取提交ID，1b2e1d63ff 是标记的提交ID</li>
+<li>git checkout –<filename> 替换掉本地改动</filename></li>
+<li>git fetch origin git reset –hard origin/master 丢弃本地改动与提交，获取服务器上最新的版本并将本地主分支指向它</li>
+<li>gitk 图形化git</li>
+<li>git config color.ui true 彩色的git输出</li>
+<li>git config format.pretty oneline 显示历史记录时，只显示一行注释信息</li>
+<li>git add -i 交互地添加文件至缓存区</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="javascript:if(confirm('http://music.163.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://music.163.com/#/song?id=479598964'" tppabs="http://music.163.com/#/song?id=479598964">
+            </audio>
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='a396afe529734b15300f'
+        data-cs='0ae7c1790f9a5cbc2b7339c12a82d58fe58f9567'
+        data-r='vipcolud.github.io'
+        data-o='vipcolud'
+        data-a='vipcolud'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="../../../../../cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" tppabs="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="../../../../../lib.baomitu.com/jquery/1.8.3/jquery.min.js" tppabs="https://lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="../../../../js/plugin.js" tppabs="https://www.belongapp.fun/js/plugin.js"></script>
+<script src="../../../../js/diaspora.js" tppabs="https://www.belongapp.fun/js/diaspora.js"></script>
+<link rel="stylesheet" href="../../../../photoswipe/photoswipe.css" tppabs="https://www.belongapp.fun/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="../../../../photoswipe/default-skin/default-skin.css" tppabs="https://www.belongapp.fun/photoswipe/default-skin/default-skin.css">
+<script src="../../../../photoswipe/photoswipe.min.js" tppabs="https://www.belongapp.fun/photoswipe/photoswipe.min.js"></script>
+<script src="../../../../photoswipe/photoswipe-ui-default.min.js" tppabs="https://www.belongapp.fun/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69833742-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+</html>
